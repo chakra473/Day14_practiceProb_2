@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UC7_SearchLinkList
+namespace UC8_InsertingData40
 {
     internal class Program
     {
@@ -11,8 +11,7 @@ namespace UC7_SearchLinkList
             list.Add(70);
             list.Add(30);
             list.Add(56);
-            list.Search(30);
-
+            list.Insert(2, 40);
             list.Display();
         }
     }

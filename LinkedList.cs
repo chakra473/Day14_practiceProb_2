@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC7_SearchLinkList
+namespace UC8_InsertingData40
 {
     public class LinkedList
     {
@@ -13,40 +13,47 @@ namespace UC7_SearchLinkList
         public bool Add(int data)
         {
             Node n = new Node(data);
+            if (head == null)
             {
-                if (head == null)
-                {
-                    head = n;
-                    Console.WriteLine("{0} inserted into the link list", n.data);
-                    return true;
-                }
-                else
-                {
-                    n.next = head;
-                    head = n;
-                    Console.WriteLine("{0} inserted into the link list", n.data);
-                    return true;
-                }
+                head = n;
+                Console.WriteLine("{0} inserted into the link list", n.data);
+                return true;
+            }
+            else
+            {
+                n.next = head;
+                head = n;
+                Console.WriteLine("{0} inserted into the link list", n.data);
+                return true;
             }
         }
 
-        public bool Search(int data)
+        public bool Insert(int index, int data)
         {
-            if (head == null)
-
-                throw new NullReferenceException("List is Empty");
-
-            Node t = head; int count = 0;
-            while (t != null)
+            Node n = new Node(data);
+            if (index == 0)
             {
-                count++;
-                if (t.data == data)
+                n.next = head.next;
+                head = n;
+                Console.WriteLine("{0}Data inserted", n.data);
+                return true;
+            }
 
-                    return true;
-                Console.WriteLine("{0} data searched", data);
+            Node t = head, pre = null;
+            while (index > 0 && t != null)
+            {
+                index--;
+                pre = t;
                 t = t.next;
             }
-            return false;
+            if (index == 0)
+            {
+                pre.next = n;
+                n.next = t;
+                Console.WriteLine("{0} Data inserted", n.data);
+                return true;
+            }
+            throw new NullReferenceException("index is not in range");
         }
 
         internal void Display()

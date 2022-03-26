@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC7_SearchLinkList
+namespace UC8_InsertingData40
 {
     public class Node
     {
