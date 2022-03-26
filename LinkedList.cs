@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC5_DeletingData
+namespace UC6_DeleteLastWithPopMethod
 {
     public class LinkedList
     {
-
-        internal Node head; //val null
+        internal Node head;
 
         public bool Add(int data)
         {
@@ -27,35 +26,30 @@ namespace UC5_DeletingData
                 Console.WriteLine("{0} inserted into the link list", n.data);
                 return true;
             }
+
         }
-
-        public bool Delete(int input)
+        public bool Pop(int index)
         {
-            if (head == null)
+            Node obj = head;
+            if (index == 0)
             {
-                return false;
+                head = head.next;
+                return true;
             }
-            if (head.next == null)
-            {
-                head = null;
-            }
-
             Node t = head, pre = null;
-            while (t != null)
+            while (index > 0 && t != null)
             {
-                if (t.data == input)
-                {
-                    pre.next = t.next;
-                    Console.WriteLine("{0} data has been deleted from linked List", input);
-                    return true;
-                }
+                index--;
                 pre = t;
                 t = t.next;
             }
-            return false;
+            if (index == 0)
+            {
+                pre.next = t.next;
+                return true;
+            }
+            throw new NullReferenceException("Index is not in range");
         }
-
-
 
         internal void Display()
         {
