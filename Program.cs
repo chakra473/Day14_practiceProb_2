@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace day14_practiceProb2
+namespace UC1_SimpleLinkList
 {
     internal class Program
     {
