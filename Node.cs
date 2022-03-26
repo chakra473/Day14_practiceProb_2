@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC4_InsertingData
+namespace UC5_DeletingData
 {
     public class Node
     {

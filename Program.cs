@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace UC4_InsertingData
+namespace UC5_DeletingData
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
             LinkedList list = new LinkedList();
-            list.Add(70);
             list.Add(56);
-            list.Insert(1, 30);
+            list.Add(30);
+            list.Add(70);
+            list.Delete(56);
             list.Display();
         }
     }
