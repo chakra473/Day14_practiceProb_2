@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace UC1_SimpleLinkList
+namespace UC2_LinkListInSequence
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -10,6 +10,7 @@ namespace UC1_SimpleLinkList
             list.Add(70);
             list.Add(30);
             list.Add(56);
+            list.Display();
         }
     }
 }
