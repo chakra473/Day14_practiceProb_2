@@ -4,32 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC3_LinkListAppend
+namespace UC4_InsertingData
 {
     public class LinkedList
     {
         internal Node head; //val null
 
-        public bool Append(int data)
+        public bool Add(int data)
         {
             Node n = new Node(data);
             if (head == null)
             {
                 head = n;
-                Console.WriteLine("{0} Appended", n.data);
+                Console.WriteLine("{0} inserted into the link list", n.data);
                 return true;
             }
-            Node t = head;
-            while (t.next != null)
+            else
             {
-                t = t.next;
+                n.next = head;
+                head = n;
+                Console.WriteLine("{0} inserted into the link list", n.data);
+                return true;
             }
-            t.next = n;
-            Console.WriteLine("{0} Appended", n.data);
-            return true;
         }
 
-        public void Display()
+        public bool Insert(int index, int data)
+        {
+            Node n = new Node(data);
+            if (index == 0)
+            {
+                n.next = head.next;
+                head = n;
+                Console.WriteLine("{0}Data inserted", n.data);
+                return true;
+            }
+
+            Node t = head, pre = null;
+            while (index > 0 && t != null)
+            {
+                index--;
+                pre = t;
+                t = t.next;
+            }
+            if (index == 0)
+            {
+                pre.next = n;
+                n.next = t;
+                Console.WriteLine("{0} Data inserted", n.data);
+                return true;
+            }
+            throw new NullReferenceException("index is not in range");
+        }
+
+        internal void Display()
         {
             Node t = head;
             if (t == null)

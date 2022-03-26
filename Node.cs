@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC3_LinkListAppend
+namespace UC4_InsertingData
 {
-    internal class Node
+    public class Node
     {
         public int data;
         public Node next;
