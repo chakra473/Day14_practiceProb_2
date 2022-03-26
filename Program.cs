@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace day14_practiceProb2
+namespace UC1_SimpleLinkList
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to linkedList problem!");
+            LinkList list = new LinkList();
+            list.Add(70);
+            list.Add(30);
+            list.Add(56);
         }
     }
 }
