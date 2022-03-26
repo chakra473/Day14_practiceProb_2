@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC2_LinkListInSequence
+namespace UC3_LinkListAppend
 {
-    public class Node
+    internal class Node
     {
         public int data;
-        public Node next; //val is null
+        public Node next;
 
         public Node(int data)
         {

@@ -4,31 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC2_LinkListInSequence
+namespace UC3_LinkListAppend
 {
-    public class LinkList
+    public class LinkedList
     {
         internal Node head; //val null
 
-        public bool Add(int data)
+        public bool Append(int data)
         {
             Node n = new Node(data);
             if (head == null)
             {
                 head = n;
-                Console.WriteLine("{0} inserted into the link list", n.data);
+                Console.WriteLine("{0} Appended", n.data);
                 return true;
             }
-            else
+            Node t = head;
+            while (t.next != null)
             {
-                n.next = head;
-                head = n;
-                Console.WriteLine("{0} inserted into the link list", n.data);
-                return true;
+                t = t.next;
             }
+            t.next = n;
+            Console.WriteLine("{0} Appended", n.data);
+            return true;
         }
 
-        internal void Display()
+        public void Display()
         {
             Node t = head;
             if (t == null)
