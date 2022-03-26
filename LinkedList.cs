@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC6_DeleteLastWithPopMethod
+namespace UC7_SearchLinkList
 {
     public class LinkedList
     {
@@ -13,42 +13,40 @@ namespace UC6_DeleteLastWithPopMethod
         public bool Add(int data)
         {
             Node n = new Node(data);
-            if (head == null)
             {
-                head = n;
-                Console.WriteLine("{0} inserted into the link list", n.data);
-                return true;
+                if (head == null)
+                {
+                    head = n;
+                    Console.WriteLine("{0} inserted into the link list", n.data);
+                    return true;
+                }
+                else
+                {
+                    n.next = head;
+                    head = n;
+                    Console.WriteLine("{0} inserted into the link list", n.data);
+                    return true;
+                }
             }
-            else
-            {
-                n.next = head;
-                head = n;
-                Console.WriteLine("{0} inserted into the link list", n.data);
-                return true;
-            }
-
         }
-        public bool Pop(int index)
+
+        public bool Search(int data)
         {
-            Node obj = head;
-            if (index == 0)
+            if (head == null)
+
+                throw new NullReferenceException("List is Empty");
+
+            Node t = head; int count = 0;
+            while (t != null)
             {
-                head = head.next;
-                return true;
-            }
-            Node t = head, pre = null;
-            while (index > 0 && t != null)
-            {
-                index--;
-                pre = t;
+                count++;
+                if (t.data == data)
+
+                    return true;
+                Console.WriteLine("{0} data searched", data);
                 t = t.next;
             }
-            if (index == 0)
-            {
-                pre.next = t.next;
-                return true;
-            }
-            throw new NullReferenceException("Index is not in range");
+            return false;
         }
 
         internal void Display()

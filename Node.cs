@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC6_DeleteLastWithPopMethod
+namespace UC7_SearchLinkList
 {
     public class Node
     {
