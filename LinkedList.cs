@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC8_InsertingData40
+namespace UC9_ShowSizeLinkList
 {
     public class LinkedList
     {
@@ -54,6 +54,49 @@ namespace UC8_InsertingData40
                 return true;
             }
             throw new NullReferenceException("index is not in range");
+        }
+
+        public bool Delete(int input)
+        {
+            if (head == null)
+            {
+                return false;
+            }
+            if (head.next == null)
+            {
+                head = null;
+            }
+
+            Node t = head, pre = null;
+            while (t != null)
+            {
+                if (t.data == input)
+                {
+                    pre.next = t.next;
+                    Console.WriteLine("{0} data has been deleted from linked List", input);
+                    return true;
+                }
+                pre = t;
+                t = t.next;
+            }
+            return false;
+        }
+
+        public int Size()
+        {
+            if (head == null)
+            {
+                return 0;
+            }
+            Node t = head;
+            int count = 0;
+            while (t != null)
+            {
+                count++;
+                t = t.next;
+            }
+            return count;
+
         }
 
         internal void Display()
